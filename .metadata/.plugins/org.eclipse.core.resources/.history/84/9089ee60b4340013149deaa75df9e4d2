@@ -1,7 +1,5 @@
 package com.dpc.exercise;
-/**
- * Excerise Activtiy of Android Develop
- */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

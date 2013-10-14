@@ -1,0 +1,14 @@
+package com.dpc.exercise;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+/**
+ * Created by PC.DING on 13-9-26.
+ */
+public class ActivityB extends Activity {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activityb);
+    }
+}

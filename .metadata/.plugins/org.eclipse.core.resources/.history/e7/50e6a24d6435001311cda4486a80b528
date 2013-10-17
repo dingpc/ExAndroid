@@ -1,0 +1,38 @@
+package com.dpc.exercise;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class ContentResolverActivity extends Activity {
+	private final String DPC_URI = "content://com.dpc.provider.books/book";
+	private ContentResolver cr;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        cr = this.getContentResolver();
+        Button button1 = (Button)findViewById(R.id.button1);
+        Button button2 = (Button)findViewById(R.id.button2);
+        
+        button1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+        button2.setOnClickListener(new OnClickListener() {
+        	
+        	@Override
+        	public void onClick(View v) {
+        		
+        	}
+        });
+    }
+}

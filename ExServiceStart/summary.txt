@@ -1,0 +1,14 @@
+1.Service的概念
+Q&A:A Service is an application component that runs in the background, 
+	not interacting with the user, 
+	for an indefinite period of time. 
+	Each service class must have a corresponding <service> declaration in its package's AndroidManifest.xml. 
+	Services can be started with Context.startService() and Context.bindService(). 
+2.Service主要内容
+Q&A:
+	Service Lifecycle
+	Permissions
+	Process Lifecycle
+3.Service的两种形式
+Q&A:启动形式
+	绑定形式

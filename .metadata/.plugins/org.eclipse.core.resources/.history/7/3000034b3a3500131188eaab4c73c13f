@@ -1,0 +1,8 @@
+1.ServiceµÄ¸ÅÄî
+Q&A:A Service is an application component that runs in the background, 
+	not interacting with the user, 
+	for an indefinite period of time. 
+	Each service class must have a corresponding <service> declaration in its package's AndroidManifest.xml. 
+	Services can be started with Context.startService() and Context.bindService(). 
+
+

@@ -1,0 +1,14 @@
+1.BroadcastReceiver
+Base class for code that will receive intents sent by sendBroadcast(). 
+You can either dynamically register an instance of this class with Context.registerReceiver() 
+or statically publish an implementation through the <receiver> tag in your AndroidManifest.xml. 
+Note:    If registering a receiver in your Activity.onResume() implementation, 
+you should unregister it in Activity.onPause(). 
+(You won't receive intents when paused, 
+and this will cut down on unnecessary system overhead). 
+Do not unregister in Activity.onSaveInstanceState(), 
+because this won't be called if the user moves back in the history stack. 
+2.广播意图
+3.Broadcast的生命周期
+Q&A:从对象开始调用它，运行onReceive方法之后就结束了。
+4.动态注册和静态注册的区别

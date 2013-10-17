@@ -1,0 +1,16 @@
+1.Activity的基本操作（启动、多个Activity互相启动、回调）
+Q&A:An activity is a single, focused thing that the user can do. 
+	Almost all activities interact with the user, 
+	so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View). 
+	While activities are often presented to the user as full-screen windows, 
+	they can also be used in other ways: as floating windows (via a theme with windowIsFloating set) or embedded inside of another activity (using ActivityGroup).
+	几乎所有的acitivity都是用来与用户交互的，因此Activity主要关注于视图窗体的创建。 
+2.Intent的基本概念
+Q&A:An intent is an abstract description of an operation to be performed
+3.startActivity和startActivityForResult的区别
+Q&A:startActivity在启动了其他Activity之后是不会再回调回来的，相当于启动者与被启动者在启动完毕之后是没有关系的。
+	startActivityForResult在启动了其他Activity之后是有回调的。
+4.Bundle类型
+Q&A:Bundle是一个类型安全的容器，只能存储基本类型的的HashMap
+5.Activity的生命周期
+Q&A:刚开始启动时，调用onCreate onStart onResume，如果按返回键 onPause，

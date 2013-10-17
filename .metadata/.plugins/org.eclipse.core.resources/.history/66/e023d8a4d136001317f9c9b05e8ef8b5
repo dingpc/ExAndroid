@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">ExBroadcast</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">ExBroadcast</string>
+    <string name="et_broadcastcontent_hint">请输入广播内容</string>
+    <string name="btn_sendBroadcast_text">发送广播</string>
+
+</resources>

@@ -1,0 +1,13 @@
+package com.dpc.exercise;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class ContentProviderActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+    }
+}

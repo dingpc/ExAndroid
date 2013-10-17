@@ -1,0 +1,35 @@
+package com.dpc.exercise;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class ContentProviderActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        Button button1 = (Button)findViewById(R.id.button1);
+        button1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				ContentResolver contentResolver = getContentResolver();
+				Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+				while(cursor.moveToNext()) {
+					String contactId = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
+					String displayName = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+					System.out.println("联系人ID：" + contactId + " 联系人名称：" + displayName); 
+				}
+			}
+		});
+    }
+}

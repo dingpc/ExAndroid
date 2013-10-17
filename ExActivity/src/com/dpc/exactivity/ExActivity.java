@@ -1,0 +1,58 @@
+package com.dpc.exactivity;
+/**
+ * Excerise Activtiy of Android Develop
+ */
+import com.dpc.exactivity.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class ExActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ex);
+        
+        //得到两个Button控件
+        Button mButton1 = (Button)findViewById(R.id.button1);
+        Button mButton2 = (Button)findViewById(R.id.button2);
+        //为Button1绑定单击事件
+        mButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                //使用intent启动Activityb
+                Intent _intent = new Intent(ExActivity.this, ActivityB.class);
+                startActivity(_intent);
+            }
+        });
+
+        mButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                //启动ActivityC
+                Intent _intent = new Intent(ExActivity.this, ActivityC.class);
+                //启动ActivityC之后进行回调
+                startActivityForResult(_intent, 100);
+            }
+        });
+    }
+    
+    /**
+     * 回调函数，处理回调结果
+     * @param requestCode：回调返回的requestCode
+     * @param resultCode：ActivityC返回的resultCode
+     * @param data：ActivityC的Intent
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 100 && resultCode == Activity.RESULT_OK) {
+            String val = data.getExtras().getString("helloworld");
+            TextView textView = (TextView)findViewById(R.id.tvDisplay);
+            textView.setText("Value from ActivityC is:" + val);
+        }
+    }
+}
